@@ -14,7 +14,7 @@ from Crypto.Cipher import AES
 from Crypto import Random
 import codecs
 import uuid
-import argparse
+#import argparse
 
 
 
@@ -49,7 +49,6 @@ def split_encrypt(filename):
             distributal.append(encodedstring)
             c+=1
             filecontent=""
-    #del distributal[0]
     
     for i in distributal:
         c=uuid.uuid4()
@@ -81,7 +80,7 @@ def add_signatures_and_move(loff,filename):
         print("File encrypted successfully :)")
     
 if __name__ == "__main__":
-    
+    """
     PRIVATE_KEY="-k"
     PUBLIC_KEY="-p"
     FILE = "-f"
@@ -99,11 +98,11 @@ if __name__ == "__main__":
         add_signatures_and_move([],filename)
     
     else:
-        parser.print_help()
-    #key = bytes(input("key: "),'utf-8')
-    #keylocfile=bytes(input("lock key: "),'utf-8')
-    #filename =input("enter file name: ")
-    #split_encrypt(filename)
-    #add_signatures_and_move([],filename)
-    
+        parser.print_help()"""
+    key = bytes(input("key: "),'utf-8')
+    keylocfile=bytes(input("lock key: "),'utf-8')
+    filename =input("enter file name: ")
+    split_encrypt(filename)
+    add_signatures_and_move([],filename)
+
     

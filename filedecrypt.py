@@ -11,12 +11,9 @@ import os
 from Crypto.Cipher import AES
 from Crypto import Random
 import codecs
-import argparse
+#import argparse
 
 def find_all_file_loc(outputkey):
-    #rn=0
-    #distributal=[]
-    #filecontent="START"
     allfiles=[]
     with open(outputkey,'r') as f:
         enckey=bytes(f.readline(),'utf-8')
@@ -52,7 +49,7 @@ def find_all_file_loc(outputkey):
         
     
 if __name__ == "__main__":
-    PRIVATE_KEY="-k"
+    """PRIVATE_KEY="-k"
     PUBLIC_KEY="-p"
     FILE = "-f"
     DESCRIPTION="Program to decrypt the random bases decentralized encrypted file"
@@ -68,10 +65,10 @@ if __name__ == "__main__":
         find_all_file_loc(outputkey)
     
     else:
-        parser.print_help()
-    #key = bytes(input("key: "),'utf-8')
-    #keylocfile=bytes(input("lock key: "),'utf-8')
+        parser.print_help()"""
+    key = bytes(input("key: "),'utf-8')
+    keylocfile=bytes(input("lock key: "),'utf-8')
     
-    #outputkey=input("enter filename to decrypt: ")
-    #find_all_file_loc(outputkey)
+    outputkey=input("enter filename to decrypt: ")
+    find_all_file_loc(outputkey)
     
